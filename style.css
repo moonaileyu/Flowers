@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 20px 0;
+    background-color: #e8d4c8;
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fffaf4;
+    border-radius: 20px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: #d9c3b1;
+    border-radius: 16px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 4px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #65283e;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tab-button:hover {
+    background-color: #c9aa9b;
+}
+
+.tab-button.active {
+    background-color: #702c45;
+    color: #fffaf4;
+}
+
+.tab-panel {
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 220px 1fr;
+    gap: 16px;
+    height: 560px;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: #e5cfc0;
+    border-radius: 16px;
+}
+
+.tab-panel.active {
+    display: grid;
+    animation: appear 0.25s ease;
+}
+
+.flower-photo {
+    width: 165px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    justify-self: center;
+    border-radius: 10px;
+}
+
+.flower-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4px;
+    color: #542638;
+}
+
+.flower-info h1 {
+    margin: 0 0 12px;
+    font-size: 26px;
+}
+
+.flower-info p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+@media (min-width: 900px) {
+    .page {
+        padding: 32px;
+    }
+
+    .tab-panel {
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: 1fr;
+        gap: 28px;
+        height: 430px;
+        padding: 24px;
+    }
+
+    .flower-photo {
+        width: 100%;
+    }
+
+    .tab-button {
+        font-size: 16px;
+    }
+
+    .flower-info h1 {
+        font-size: 28px;
+    }
+
+    .flower-info p {
+        font-size: 16px;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
